@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-[Inter]">
+
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg mt-10">
+    <div class="p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6"></h2>
+
+      <form id="transporterForm">
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Transporter Id</label>
+              <input type="text" required readonly
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="Transporter ID">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Transport Name</label>
+              <input type="text" required
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="Transport Name">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Transporter Name</label>
+              <input type="text" required
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="Transporter Name">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Primary Cell No</label>
+              <input type="tel" id="primaryCellNo" maxlength="16" required
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="+92 XXX XXXXXXX">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Secondary Cell No</label>
+              <input type="tel" id="secondaryCellNo" maxlength="16" required
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="+92 XXX XXXXXXX">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+              <input type="text" required
+                     class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300"
+                     placeholder="Address">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">City</label>
+              <select required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-300">
+                <option value="">Select City</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Karachi">Karachi</option>
+                <option value="Islamabad">Islamabad</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button type="submit"
+                    class="w-full md:w-auto px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg">
+              Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function autoFill92(id) {
+      const input = document.getElementById(id);
+      input.addEventListener('focus', () => {
+        if (input.value.trim() === '') {
+          input.value = '+92 ';
+        }
+      });
+    }
+
+    autoFill92('primaryCellNo');
+    autoFill92('secondaryCellNo');
+  </script>
+
+</body>
+</html>
