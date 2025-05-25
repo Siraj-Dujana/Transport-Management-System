@@ -1,4 +1,0 @@
-remaning funtionality
-login
-register
-
